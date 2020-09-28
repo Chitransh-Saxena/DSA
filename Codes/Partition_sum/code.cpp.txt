@@ -1,0 +1,64 @@
+/* Since the goal is to divide the array in 2 parts with equal sums, the total sum of the array has to be even.
+   If sum is even, find the subarray with sum equal to sum/2.
+
+   https://leetcode.com/problems/partition-equal-subset-sum/
+
+*/
+
+/*
+Below recursive solution is giving TIME LIMIT EXCEEDED
+
+class Solution {
+public:
+     bool canPartition(vector<int>& nums) {
+
+		int arrSum = 0;
+		for (int num : nums) {
+			arrSum += num;
+		}
+
+		if (arrSum & 1) {
+			return false;
+		}
+
+		int m = arrSum / 2;
+        
+		int n = nums.size();
+        
+		int dp[n+1][m+1];			//Traverse across all elements for half of the total sum;	this is same as int dp[n+1][m];
+        
+		dp[0][0] = 1;					//When there is no element and sum wanted is 0, it is possible (true)
+
+		for (int j = 1; j <=m; j++) {
+			dp[0][j] = 0;				//Making each column of 0th row as 0, because if you don't have any element, you cannot make total sum of anything other than 0
+		}
+
+		//Populating the dp matrix
+		for (int i = 1; i <=n; i++) {
+
+			int currElem = nums[i-1];
+			for (int j = 0; j < min(currElem, m+1); j++) {				//Taking min here because currElem can be greater than half of total sum (undefined behaviour)
+				dp[i][j] = dp[i - 1][j];			//Copying the value from previous row
+			}
+			for (int j = currElem; j <=m; j++) {
+
+				if (dp[i - 1][j] == 1 || dp[i - 1][j - currElem] == 1) {		//Need to learn this logic in detail (other self explainotry)
+					dp[i][j] = 1;
+				}
+				else {
+					dp[i][j] = 0;
+				}
+			}
+		}
+		if (dp[n][m] == 1) return true;
+		else
+		{
+			return false;
+		}
+	}
+};
+
+*/
+
+/* Going for a dynamic programming approach here, store the result of any case that we come across
+
