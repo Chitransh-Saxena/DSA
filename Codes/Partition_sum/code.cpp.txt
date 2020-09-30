@@ -6,7 +6,7 @@
 */
 
 /*
-Below recursive solution is giving TIME LIMIT EXCEEDED
+The recursive solution was giving TIME LIMIT EXCEEDED, so this is DP solution
 
 class Solution {
 public:
@@ -60,5 +60,4 @@ public:
 
 */
 
-/* Going for a dynamic programming approach here, store the result of any case that we come across
 
