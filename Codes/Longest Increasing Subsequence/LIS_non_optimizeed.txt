@@ -1,6 +1,11 @@
 /*
 
-This is O(n2) solution, this can be done in O(nlogn)
+This is O(n2) solution, this can be done in O(nlogn).
+
+Why to take LIS till nums[i]?
+--> Because the compulsion that DP[i] should be populated by LIS which ends at nums[i], makes the calculation a bit simpler.
+	--> Compare if nums[i] is greater than which nums[i] is greater than which elements in nums[0->i]
+	--> Whichever is greatest till nums[i], DP[i] will be 1 + DP[greatest till i]
 
 class Solution {
 public:
