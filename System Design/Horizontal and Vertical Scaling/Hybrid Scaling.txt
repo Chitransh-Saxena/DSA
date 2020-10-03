@@ -29,18 +29,18 @@ Inspiration for different approaches -
 		8.3.2 Buy more machines - HORIZONTAL SCALING
 	
 	
-Horizontal Scaling								vs								Vertical Scaling
+Horizontal Scaling									vs								Vertical Scaling
 
-1. Need Load balacing, because traffic(load)			Not required as there is only one machine
+1. Need Load balacing, because traffic(load)							Not required as there is only one machine
    needs to be balanced among all machines		
 
-2. Resilient (if machine fails, we can manage			Here there is single point of failure, if it fails, it fails
+2. Resilient (if machine fails, we can manage							Here there is single point of failure, if it fails, it fails
    with other machines, either load or admin work)	
 
-3. Here, to communicate, 2 or more machines need		Here we have Inter Process Communication
+3. Here, to communicate, 2 or more machines need						Here we have Inter Process Communication
    Network calls (RPC). It is usually slower.
 
-4. Data Inconsistency. So lets say if we have 3			Here since there is just 1 system that resides, thats why this is more consistent.
+4. Data Inconsistency. So lets say if we have 3							Here since there is just 1 system that resides, thats why this is more consistent.
    or more services and some data has to go from 
    machine 1 to 2, and from there to 3...and some
    other response gets computed.
@@ -50,4 +50,30 @@ Horizontal Scaling								vs								Vertical Scaling
    (not practical).
    This gives a Loose Transactional Guarantee.
 
-5. 
+5. Since the amount of servers we throw at the problem					Hardware Limit
+   is linear(n servers, load balanced between
+   n machines)
+   So, this SCALES WELL
+   
+   
+   
+   
+   
+ 
+What is used in the real world?
+
+Hybrid - A combination of both of the scaling approaches. Because a good design should make the system more resilient, Scaling should be good,
+instead of RPC, we would profer interprocess communication, and of course, data should be consistent across all servers.
+
+Hybrid is mostly horizontally scaled.
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
