@@ -1,0 +1,50 @@
+Talking about distributed systems and High Level System Design.
+
+Vertical Scaling :
+
+1. Taking an example of a restaurant, what happens when you start getting more orders?
+2. So, now the goal is to optimze processes and increase throughput with same resources. This is basically vertical scaling.
+3. One approach is that we can prepare before hand at non-peak hours
+4. Now that we have some basic system setup, have to make it resilient.
+	
+	4.1 What happens when the chef gets sick one day?
+	4.2 Need a backup chef in that case. (1 chef means a single point of failure)
+	4.3 Keep backups and avoid SOP.
+	4.4 If business keeps growing it is better to keep more full time chefs then just few backup chefs. (This is called Horizontal Scaling)
+	
+5. Microservices Architecture - 
+
+	5.1 The job scenarios are pretty well defined.
+	5.2 Group resources in an organized way such that each job can be categorized.
+	5.3 Once the job has been categorized, it can be given to appropriate resources.
+	5.4 This ensures optimization and efficiency, each resource performing the task that it can do best.
+	5.5 Monolithic approach would be to just pass on the task to whatever resource is free, but in real-time it is better to have a microservices approach and make ammends at run-time if anything is necessary
+
+6. Distributed Systems:
+	
+	6.1 Till above point, business has been scaled, optimized, theoretically it should be doing pretty well.
+	6.2 But what happens when we encounter some physical damage, like electricity failure, docker is down or something like that.
+	6.3 So, the main goal is to not put all your eggs in one basket. Have a duplicate system at a different physical location.
+	6.4 So, in this way, the request from one source can be handled by a nearby available resource (smth like dominos)
+	6.5 In case of one service is down, another service can take all the load
+
+7.  Load Balancing
+	
+	7.1 Consider, a customer placing a request. But it is not his responsibility to identify the nearest Service provider and contact them.
+	7.2 This task should go to some central hub, from where it will gather real-time data (To which server should it send the request, and which will be cheaper based on current wait time, delivery time and everything)
+	7.3 Once the central hub makes a sensible choice, it just have to send the request, this central hub is called Load Balancer.
+
+
+So, now, in current design, the system is able to make smart decision, it is resilient so it can work even if one component is down, on a component level it has been optimized to get faster and better quality output.
+What's left then? How to make it future-proof? Like, if something has to be changed in future, how would it be changed?
+
+
+8. Decoupling the System: Basically, make each component as independent as possible and just connect them via basic interfaces.
+
+9. Also, logging is pretty important, because we do not know what may go wrong when, so we can always refer to logs figure out the failures.
+
+10. Extensibility :
+
+	10.1 Changing code or their functionality should be possible, easily.
+
+	
