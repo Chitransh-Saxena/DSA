@@ -1,0 +1,20 @@
+-> Load Balancing - The concept of having a service running on n number of servers and balancing the requests amongst those n servers is called Load Balancing.
+
+-> How can this be achieved? One approach could be using consistent hashing. Let's see simple Hashing for Now.
+
+-> The approach is simple.
+	
+	1. We can assume that each request to a server is having at least one unique id called request_id.
+	2. We can then devise a hash function to which we can pass that id and it will return an integer to us.
+	3. Now we can apply some mathematics and formulate a way to direct the request to a particular server based on the Integer we get after all the calculation,
+
+-> Till this point it seems flawless, we have requests, we are routing them to different servers in a very organized way.
+
+-> Now, what happens if we have to change the number of servers, say, we increase the number of servers in future?
+	
+	1. We definetely need to change the mathematics that forumlates which request is going to which server.
+	2. BUT, major problem comes in business aspect. Consider this, we get some request id, and request_id is not just a random number, it is something that has some info about user and other relevant info.
+	3. Now, same it's highly probably that request from same user will go to same server again and again, before serving with response, there might be few informations that need to be fethced, that could be just pre-fetched and saved in the cache.
+	4. So, basically, each server would be storing some cache type data of each request it is handeling.
+	5. And now that we added another server, and changed the mathematics, the requests will start going to different servers, and stored cache will be irrelevant now (to a major extent)
+	6. So, what can be done? Avoid a huge change in the numbers that we are serving per server (Keep the variation in resulting server mapping to as minimum as possible)
