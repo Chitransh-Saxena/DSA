@@ -1,0 +1,73 @@
+class Solution {
+public:
+    
+    int min_num(int a, int b, int c) {
+        return min(min(a,b), c);
+    }
+    int minDistance(string word1, string word2) {
+        
+        
+        /* Solving this problem via Dynamic Programming
+        
+            If we have 2 strings, s1 = "horse", and we have to convert it to s2 = "ros";
+            We are going to form a matrix of minimum operations to perform to transform 1 string into another
+            We have 3 operations that we can perform, but cost of each operation is 1, so it basically does not matter.
+            
+            s1 = horse
+            s2 = ros
+            
+            Matrix will be something like
+            We populate the matrix by comparing characters
+            If characters are same, cost till now is last acquired cost
+            If characters are not same, we see how many operations would it take to convert that substring of s1 to that substring of s2
+            
+            Example, for 1,1 characters are not same, so 1 operation will be required, so dp[1][1] = 1;
+            For 1,2 (convert ro to h) we need 2 operations (insert h and delete o)
+            For 1,3 (convert ros to h) we need 3 operations (insert h and delete other 2)
+            For 2,1 (convert r to ho) we need 2 operations (insert h and o)
+            
+            So this way we populate the matrix.
+            So, the maths behind this is, if characters are same, that means s1[i] == s2[j]... then cost of operation till now will be same as last cost on this operation,
+            which is dp[i-1][j-1].
+            But if the characters are not same, we check the minimum cost of surroundings (left, top and diagoanl left), and add 1 to it. (Not any proof of this, but this is the deduced             math which we find once we start filling up the matrix)
+            
+            
+              r o s 
+            0 1 2 3
+          h 1 1 2 3
+          o 2 2 1 2
+          r 3 2 2 2
+          s 4 3 3 2
+          e 5 4 4 3
+          
+          So, the minimum operations required to convert s1 (ros) to s2( horse) will be 3 (dp[m][n])
+        */
+        
+        int m = word1.size();
+		int n = word2.size();
+		    
+        int dp[n+1][m+1];
+        for(int i = 0; i<=m; i++) {
+                dp[0][i] = i;
+        }
+
+        for(int i = 0; i<=n; i++) {
+                dp[i][0] = i;
+        }
+
+
+
+        for(int i = 1; i<n+1; i++) {
+            for(int j = 1; j<m+1; j++) {
+
+                if ( word2[i-1] == word1[j-1]) {
+                    dp[i][j] = dp[i-1][j-1];
+                }
+                else {
+                    dp[i][j] = min_num(dp[i-1][j-1], dp[i-1][j], dp[i][j-1])+1;
+                }
+            }
+        }
+        return dp[n][m];
+    }
+};
