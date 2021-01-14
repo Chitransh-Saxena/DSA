@@ -1,0 +1,49 @@
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        
+        vector<vector<int>> vec;        // To store unique quads
+        sort(nums.begin(), nums.end()); // This will ease further processing
+        
+        int n = nums.size();
+        for(int i = 0; i<n; i++) {
+            for (int j = i+1; j<n; j++) {
+                
+                int target_2 = target - nums[j] - nums[i];      //If arr[i] and arr[j] are 2 of the 4 nums, target_2 will be sum of remaining 2 numbers.
+                
+                //Now that we know the sum of remaining 2 numbers, we just have to find those 2 numbers
+                
+                int front = j + 1;    // 1 pointer more than the latest pointer
+                int back = n - 1;   // Last value
+                
+                
+                while(front < back) {       // We have not reached the end of the numbers array
+                    
+                    int two_sum = nums[front] + nums[back]; // two_sum will be in this while loop because we might be moving the front and back pointer
+                    
+                    if(two_sum < target_2)  front++;        // If current sum of nums[front] and nums[back] is less than target, we need a bigger number, that will be on the right of front pointer
+                    else if(two_sum > target_2) back--;     // If current sum is greater than the target sum, than we need a smaller number, that we can find on the left
+                    
+                    // It is our decision to move front pointer forward and back pointer backwards
+                    
+                    else {          // We found the numbers whose sum is equal to target_2
+                        vector<int> vals;
+                        vals.emplace_back(nums[i]);
+                        vals.emplace_back(nums[j]);
+                        vals.emplace_back(nums[front]);
+                        vals.emplace_back(nums[back]);
+                        vec.emplace_back(vals);
+                        
+                        // Handeling the duplicates for front and back pointer values
+                        while(front < back && nums[front] == vals[2])   ++front;        // Move front pointer if it sees this value again in this array
+                        while(front < back && nums[back] == vals[3])    --back;         // Move back pointer if it ever sees this value again in the array
+                    }
+                    
+                }
+                while(j+1 < n && nums[j+1] == nums[j])  ++j;        // If value at nums[j] is ever seen, move  the pointer one position forward
+            }
+            while(i+1 < n && nums[i+1] == nums[i])  ++i;            // If the value at nums[i] is ever seen, move the pointer one posi forward
+        }
+        return vec;
+    } 
+};
