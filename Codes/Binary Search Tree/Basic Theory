@@ -1,0 +1,43 @@
+Binary Search Tree
+
+1. Efficient structure to organise data for quick search and update. (How?)
+2. Basically when we have data where frequent modification is expected, BST can be used.
+
+
+So if we wanted to implement search, insert and remove in our existing DS like Array and Linked Lists, what will be the time complexities?
+
+                        Array (Unsorted)        Linked List
+
+Search                      O(n)                    O(n)
+
+insert                      O(1)                    O(1)    {Always wondered how inserting in LL is O(1)}
+
+Remove                      O(n)                    O(n)    Because we would have to move all the elements in position left or right in the worst case
+
+Well, O(n) is not a good number for large data sets
+So how does BST come into the picture
+
+
+                        Binary Search Tree
+
+Search                      O(logn) 
+
+insert                      O(logn) 
+
+Remove                      O(logn)
+
+So, how does the cost of these operations minimizes?
+
+-> It is a binary tree where the value of left child is less than that of right child. (Basic level of sorting is observed)
+-> Also, all the nodes in left subtree are smaller or equal than the parent and all the nodes on the right subtree are greater than the relative parent.
+-> SEARCH IN BST - Since the tree is sorted, we can use Binary Search Algorithm here (methodology is very similar to arry in case of BST).
+    -> We start by root, check if the element is smaller or greater, and based on that we move on the left or right subtree
+    -> We have alredy reduced our search space by half, and in this way, we keep on reducing it by half of current search space in each iteration
+    -> Thus the time complexity of O(logn) is observed. (Math behind it is not written here, not necessary for me)
+-> INSERTION IN BST - If we want to insert an element in a BST, we compare it with the root.
+    -> If it is lesser or equal to root, we check if there is a left child.
+    -> If there is no left child, add node as left child, ezz, otherwise, go left and insert as left child of that element. (Recursively follow this approach)
+    -> If greater, go right, and check if the element is greater or smaller than the current element.
+    -> If it is smaller, go left and do the check again, and recursively do the checks until we find a position to inert.
+    -> This part would be much better explained with a code.
+-> 

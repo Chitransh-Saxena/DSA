@@ -1,0 +1,9 @@
+Question was, is there a difference between Node* next and Node *next;
+
+Answer - 
+Online Answer :
+1. Node* next, this does not make 'next' to point anywhere, it just tells the compiler that you have a variable of type 'pointer to some node'. This does not set any value, makes it null
+2. Node *next, this ensures that you have variable next which is pointer to the node.
+
+I do not understand above explaination, might have to try the code and read documentation once.
+

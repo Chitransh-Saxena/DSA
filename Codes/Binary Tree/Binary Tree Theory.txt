@@ -1,0 +1,47 @@
+
+Binary Trees
+
+
+Till now we have seen linear data structures - 
+
+Array - Stores in sequential manner
+Linked List - Same as above
+Stack - LIFO (which is sequential)
+Queue - FIFO (sequential)
+
+Above are used to store data in sequential in organized manner
+-> Like if we need a good and fast search we can use array or vectors
+-> If we want a less memory consumtion our choices will be based on that
+
+So, in short, based on environmental needs and business logic needs, we use different data structures
+
+Based on need of our storage, we can use different types of data structures
+
+If we want to store heirarchial data, we use Tree
+-> Hierarchy in a school
+-> Starts from the top (which is head or root) (don't confuse the root here, since root in a real tree is bottom, here we mean by the first element that we come across or top most)
+
+
+Names - 
+-> Each Node has it's children, and in BINARY Tree, each node has at most 2 children(because binary means 2)
+-> A tree can have more children, it's just binary tree that has only 2 children.(Common naming convention is node->left and node->right)
+-> In above example, node is PARENT NODE, and left and right are it's CHILD nodes.
+-> Children of same parents are called siblings (duhhhh), left and right are SIBLING NODES.
+-> All things that start have to end, the nodes without any child mark the end of a linked list, these are called LEAF NODES
+-> All the nodes in a tree which can be reached via any parent, are called ANCESTORS of that node.
+-> Inverse of above will be DECENDANT, like all the nodes that can be reached via a node, are called decendants of that node.
+
+
+Properties - 
+
+-> Tree is a recursive DS, because a tree can have a subtree of similar structure. (parent, left child, right child)
+-> If there are N NODES, THERE WILL BE N-1 EDGES
+-> DEPTH - depth of node x, is the length of path from root till x (each element contributing 1 unit). Call it number of edges from root till x.
+-> DEPTH of a root node is 0.
+-> HEIGHT - Max no. of edges from current node 'x' till any leaf node in that heirarchy. Basically longest path from current node to any leaf node in that heirarchy.
+-> Height of Tree is height from root node.
+
+
+
+
+

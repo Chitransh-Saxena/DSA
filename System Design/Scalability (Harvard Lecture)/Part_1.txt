@@ -1,0 +1,3 @@
+Scalability lecture (Harvard)
+
+We will start by understanding how we can deploy services on the internet (not virtual machines, servers or anything local), so that we can handle hundreds and thousands of requests at a time
