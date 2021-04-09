@@ -1,0 +1,26 @@
+
+Stack
+
+std::stack is a container adapter. It means it is adapting a certain container and mapping the functions.
+So, it means this stl is made up of some other DS, in this case, it interally uses dequeue.
+It operates on LIFO functionality.
+
+Functions - 
+empty()
+size()
+top()
+push(item)
+pop()
+
+
+Queue - 
+std::queue is again an container adapter.
+It implements FIFO functionality, what goes first, comes out first.
+
+Function - 
+empty()
+size()
+pop()
+push(item)
+front() -  see how top() is replaced by front() and back()
+back()

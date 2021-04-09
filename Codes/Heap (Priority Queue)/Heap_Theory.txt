@@ -1,0 +1,42 @@
+What is a heap and how do we implement it?
+
+-> Heap offers us the largest or smallest from a group of numbers ( or objects based on comparator we select)
+-> Heap is a DS and not an ADT, but Priority Queue is an ADT
+-> Stack and Queue are ADT
+-> Heap is an implementation of Priority Queue data type.
+-> An ADT is basically a set of behaviours that we decide for any other class or data type
+-> When we implement a class from ADT, some set of behaviours are mandatorily decided and they have to be implemented.
+
+Main Application - 
+
+-> Binary Heap is used to implement Heap Sort and Priority Queue
+-> Pririty Queue is used in Djkshitra algorithm, prim's shortest path algorithm, huffman coding
+-> Basically, whenever we have some items, and we have to sort them on basis of some priority or we are given in priority and have to operate on them.
+
+Min Heap - 
+-> Lowest value item always remains on the top (lowest has the highest priority)
+
+Max Heap -
+-> Highest value item always remains on the top (highest has the highest priority)
+
+
+In Binary Heap -
+
+-> It is going to be a complete binary tree (Filled from left to right, top to bottom, level by level), except possibly from last level, that too has to be filled left to right
+-> So, if we remove any element, we have to automatically make adjustments so as to balance the binary tree
+-> We can finding of largest or smallest of something in O(1) time
+
+
+What is advatage of having a complete binary tree?
+
+-> When you sdtore a binary tree as an array, and if it is an complete binary tree, we can represent it as an array without wasting any space.
+-> If it were a complete binary tree and we converted it into an array, we can also perform many operations on it very quickly.
+-> It is cache friendly too.
+
+**** Mathematical Operations Performed if we have complete binary tree as an array *** - 
+
+1. left(i) = 2i + 1;  // This means left child of element at index i, we can look at 2i+1 index.
+2. right(i) = 2i + 2;
+3. parent(i) = floor((i-1)/2)
+
+How are these above formulas derived?

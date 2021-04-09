@@ -1,0 +1,12 @@
+/*
+Min Heap - 
+    -> It is a complete binary tree
+    -> Every node has values smaller than its descendants. It means this node is going to be smaller than it's children
+    -> NOTE that this property is not same as that as Binary Search Tree
+    -> Min Heap is internally represented as an array. By internal, I mean in-memory
+
+    Therefore, the mathematical properties apply to it:
+    1. left(i) = 2i + 1;
+    2. right(i) = 2i + 2;
+    3. parent(i) = floor((i-1)/2);
+*/

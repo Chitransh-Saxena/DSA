@@ -1,0 +1,4 @@
+/*
+    Huffmancoding is a lossless data compression algorithm.
+    
+*/

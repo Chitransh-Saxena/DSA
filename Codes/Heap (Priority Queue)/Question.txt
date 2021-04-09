@@ -1,0 +1,6 @@
+1. How to make a heap?
+2. When we are given a binary tree which is not complete or balanced, how to make it heap ready? What operations do we need to perform?
+3. What is difference between int *arr and int arr[] in cpp?
+4. In a constructor of a class, why do we do this->class_variable = some_value and how is it different from class_variable = some_value?
+    4.1 What problems could the second one create and why?
+    4.2 How does this->class_variable fix that?
