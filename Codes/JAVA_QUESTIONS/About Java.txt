@@ -1,0 +1,41 @@
+Why is java platform independent ?
+	-> Java compiler produces a unique type of code called the byte code, unlike C, which produces only natively executable code for a particular machine. (Then how do we ship .exe files?)
+	-> Basically, when java program is run on a machine, it is sent to a machine, which is converted into a byte code (.class).
+	-> This bytecode is sent to JVM, which is residing in the RAM of the OS.
+	-> Then JVM (javac) converts this bytecode to native machine code based on the platform (x86, 64 bit or 32 bit, what OS etc.)
+
+Why is java known as architecterally neutral?
+	-> Because the implementated features are same accross different architecuture versions of the platform.
+	-> For example, int data type is of 4 bytes in both 32 bit and 64 bit version of the OS.
+	-> But in C++, int is 2 bytes for 32 bit and 4 bytes for 64 bits.
+
+
+What is a JAR file?
+	-> JAR is Java ARchive, basically used for aggregating all the required components at one place.
+	-> JAR is cross-platform
+	-> It is backward compatible with existing applet code.
+	-> If J2RE is installed in the machine, double clicking on the JAR file will automatically run it with javaw -java
+	
+	-> So basically a JAR file can contain a lot of .class files (byte codes for many java files)
+
+
+What is the difference between JAR and WAR file?
+	-> JAR file contains java class files, associated metadata, resources and everything necessary for the running an application in a single executable step.
+	-> Whereas the WAR file contains servlet, html, jsp and js files for developing and running a Web Application.
+	
+	-> In broader terms, JAR is for running desktop applications and WAR is for running web applications.
+
+
+What is the difference between JSE and JEE ?
+
+JSE - Java Standard Edition (Stnadard/Core Java)
+JEE - Java Enterprise Edition (Advanced Java)
+
+JSE:
+	-> Basic java applications (desktop applications can be developed using this)
+	-> It is simply the fundamental of java.
+	
+JEE:
+	-> It is used for Web Applicaions.
+	-> On a side note: Web App is different from a simple Website. Web Apps use a DB and some piece of logic to take input and give some sort of output
+	-> On the existing concepts of core java, JEE uses concepts like servlets, js and jsp..etc.

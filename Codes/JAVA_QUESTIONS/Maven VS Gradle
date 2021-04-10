@@ -1,0 +1,23 @@
+Maven - 
+-> Maven is a build tool, developed by the Apache group to build, deploy and publish several groups at once
+-> Tool is written in java, used to build projects in C#, scala, ruby etc.
+-> Project build basically takes care of everything, like resources, dependencies, reports, releases and etc.
+-> Majorly used in java projects to build the code and download dependecies.
+
+
+Gradle -
+-> Build automation tool known for it's flexibility to build the software.
+->  Process includes compiling, linking and packaging the project.
+-> Gradle can build in many languages including c++ too.
+-> Gradle supports building, testing and deploying on several softwares.
+
+-> Gradle includes all the pros of Maven and cures all the cons of Maven.
+
+Maven VS Gradle
+
+1. Maven is mainly focussed on Java, whereas gradle focusses on adding functionality to any language projects. HOW????
+2. Maven focusses on developing applications within the deadlines whereas Gradle focuses on developing apps by adding new features. HOW???
+3. Maven uses xml to make project structure whereas Gradle doesn't use that. It uses groovy based domain specific language for making project structre.
+4. Gradle supports more languages.
+5. Gradle is much more customizable than Maven, but this sort of makes Gradle a little bit complex for noobs
+6. Maven does not have build cache, therefore it is a lot slower than Gradle.
