@@ -1,17 +1,4 @@
-/*
-    Heapify Operation - It takes in a binary tree and a node which may be violating the binary heap properties.
-    We have to fix  the heap.
-
-    Given - arr[] and an index 'k' which is violating the heap property(min or max)
-    To do - Fix the heap.
-
-    NOTE - No insert is required, just re-arrange the elements.
-
-    Solution used is recursive, O(log(n)), n = number of nodes, because we will be traversing the entire tree.
-*/
-
 #include <iostream>
-#include <vector>
 using namespace std;
 
 class MinHeap {
@@ -28,6 +15,16 @@ class MinHeap {
             heap = new int[cap];     // Dynamic allocation of memory
         }
 
+        MinHeap(int *heap) {        // New constructor when we have a heap already and just want to use below methods
+
+            this->heap = heap;
+        }
+
+        MinHeap(int *heap, int size) {
+            this->heap = heap;
+            this->size = size;
+        }
+
         // Refer file Heap_Theory.txt in same directory for the reasoning behind these mathematical operations
         int left(int i) {
             return (2*i + 1);
@@ -41,7 +38,8 @@ class MinHeap {
             return (i-1)/2;     // The round off automatically gives us the floor value.
         }
 
-        void heapify(int k) {
+        // Adding this here because it is used in so many other questions, it is better to have it as a library function
+        void heapify(int k) {               // O(log(n))
 
             // 2 Approaches which I could think of
             // 1. We can go from bottom to top (level wise) and check if parent < child, if not we swap, but if we do that, children of the new parent will get unorganized
@@ -68,5 +66,34 @@ class MinHeap {
             }
 
 
-        }   
+        }
+
+        void maxHeapify(int k) {               // O(log(n))
+
+            // 2 Approaches which I could think of
+            // 1. We can go from bottom to top (level wise) and check if parent < child, if not we swap, but if we do that, children of the new parent will get unorganized
+            // 2. Use Recursion. We can check minimum(parent, left, right) and if parent is not minimum, we swap it with min, and call this recursively for the entire tree
+
+            int left_id = left(k);
+            int right_id = right(k);
+
+            int great = k;
+            if(left_id < size && heap[left_id] > heap[k]) {
+
+                great = left_id;    // In case of smaller value, we exchange indices. Now item at heap[k] will come at the index of smaller element.
+                // Isn't item at left_id lost then? No, because we have just given the index variable 'small' same value as left_id index, we have not exachanged the value at that index yet.
+
+            }
+
+            if(right_id < size && heap[right_id] > heap[k]) {
+                great = right_id;
+            }
+
+            if(great != k) {
+                swap(heap[great], heap[k]);
+                heapify(great);             // Recursively fix the whole tree now.
+            }
+
+
+        }
 };

@@ -1,5 +1,5 @@
 /*
-    Selection Sort - 
+    Selection Sort - O(n2)
 
     Why is selection sort?
 
