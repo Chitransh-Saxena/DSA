@@ -49,14 +49,14 @@ class MinHeap {
             int right_id = right(k);
 
             int small = k;
-            if(left_id < size && heap[left_id] < heap[k]) {
+            if(left_id < size && heap[left_id] < heap[small]) {
 
                 small = left_id;    // In case of smaller value, we exchange indices. Now item at heap[k] will come at the index of smaller element.
                 // Isn't item at left_id lost then? No, because we have just given the index variable 'small' same value as left_id index, we have not exachanged the value at that index yet.
 
             }
 
-            if(right_id < size && heap[right_id] < heap[k]) {
+            if(right_id < size && heap[right_id] < heap[small]) {
                 small = right_id;
             }
 
@@ -78,14 +78,14 @@ class MinHeap {
             int right_id = right(k);
 
             int great = k;
-            if(left_id < size && heap[left_id] > heap[k]) {
+            if(left_id < size && heap[left_id] > heap[great]) {
 
                 great = left_id;    // In case of smaller value, we exchange indices. Now item at heap[k] will come at the index of smaller element.
                 // Isn't item at left_id lost then? No, because we have just given the index variable 'small' same value as left_id index, we have not exachanged the value at that index yet.
 
             }
 
-            if(right_id < size && heap[right_id] > heap[k]) {
+            if(right_id < size && heap[right_id] > heap[great]) {
                 great = right_id;
             }
 

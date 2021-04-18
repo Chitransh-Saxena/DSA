@@ -1,0 +1,38 @@
+Graph theory is mathematical theory of the properties and application of graphs
+-> It enables various real life application, like social networking and various mathematical inter-linking problems
+-> Major difference between tree and graph is tree is used to represent heirarchy
+-> But if there is a cycle in any of the relationships between elements, we cannot use tree in that case.
+-> We use graph data structure where there can be some connection among the nodes.
+-> Graph is represented by pair of sets of vertices.
+
+Types of graphs
+-> Unidrected graph
+    -> The edges have no orientation
+    -> This means, edge (u,v) is same as edge (v,u)
+    -> For example, road between 2 cities. The same road can take you back and forth. Or friends on a social network (If I am your friend, you are mine)
+    -> Pictorial representation does not involve arrows, showing that direction is not involved.
+
+-> Directed graph or digraph
+    -> So, in this case the edges have orientation
+    -> So, edge (u,v) is the edge from node u to node v.
+    -> These graphs are usually represented with arrows.
+    -> Example could be instagram, If I follow you, doesn't mean you follow me.
+
+-> Weighted graph
+    -> Graphs can contain edges with weights that represent some value.
+    -> This could be either distance, cost, time-span ..etc
+    -> In that case, the edge is represented as a triplet and not a pair (u,v,w) . w being weight here.
+
+    -> Weighted graph can be both directed and undirected in it self.
+
+-> Special graphs
+    -> Trees
+        -> These are undirected graphs with no cycles. That means, there is only 1 way of reaching from one node to another.
+        -> With n nodes, there are n-1 edges.
+    -> Rooted Trees
+        -> It is a tree with a designated root node, where every node either points towards the node or away from the node.
+        -> Regular BST and BT are out-trees. Till now I have not seen in-tree in any problems so far.
+    -> DAGs (Directed Acyclic Graphs)
+        -> These are directed graphs with no cycles.
+        -> These represent structures with dependencies.
+        -> For example, Airflow DAGs (Scheduler), build system, compiler.

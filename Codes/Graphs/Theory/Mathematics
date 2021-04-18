@@ -1,0 +1,23 @@
+
+
+In a undirected graph
+-> Degree of a vertex is - Number of edges passing through it. (Incoming or outgoing)
+-> Sum of degrees - 2 * number of edges
+-> Maximum number of edges - (v * (v-1) ) / 2
+    -> How did we get this expression
+    -> Every vertex (total v) is connected to v-1 vertices. (Same as directed graph)
+    -> But this time, an edge represents 2 connections, so the number of connections is reduced to half.
+    -> Therefore (v * (v-1)) / 2;
+    -> Such undirected graph is also called a complete graph
+
+In a Directed Graph - 
+-> Indegree - Number of edges coming towards it
+-> Outdegree - Number of edges going out of it.
+
+-> Sum of Indegrees - Total number of edges
+-> Sum of Outdegree - Also total number of edges
+
+-> Maximum number of edges in a directed graph - v * (v - 1 ) {We are not considering self loop in this}
+    -> We get this expression by this logic
+    -> Every vertex (total v) is connected to v-1 vertices. Therefore total number of edges = v * v-1
+    -> This makes a graph, complete graph
