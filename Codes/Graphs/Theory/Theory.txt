@@ -36,3 +36,15 @@ Types of graphs
         -> These are directed graphs with no cycles.
         -> These represent structures with dependencies.
         -> For example, Airflow DAGs (Scheduler), build system, compiler.
+
+-> Dense / Sparse Graph
+    -> A dense graph is something in which number of edges is equal to or close to maximum number of edges (Max edges in undirected graph - (v * (v-1)/2))
+    -> A sparse graph is a graph in which number of edges is equal to minimum number of edges
+
+
+-> Simple / Complete graph
+    -> A Simple graph is a graph which has no loops and no multiple edges between 2 nodes
+    -> A complete graph is a graph in which each pair of distinct vertices is connected by a unique edge
+
+-> Strongly connected graph 
+    -> A graph in which a path is there in both directions for each pair of vertices (direct path and a longer path, both count)

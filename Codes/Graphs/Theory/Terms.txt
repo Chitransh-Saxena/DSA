@@ -3,3 +3,9 @@ Walk - When we traverse the vertices, the nodes that we travel, that series is c
 Path - It is a special walk with no repretion of vertices.
 
 Cyclic - There exists a vertex that begins and ends with the same vertex.
+
+Adjacency:
+    -> Adjacent vertices - If there is an edge between 2 vertices.
+    -> Adjacent edges - If there is a common vertex between 2 edges
+
+Degree - Explained in Mathematics section

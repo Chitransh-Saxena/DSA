@@ -1,0 +1,55 @@
+Graph can be represented by
+
+1. Adjacency Matrix
+2. Adjacency List
+
+These are methods of how do we create a graph in our program, how do we represent it, how do we use it. Above two are the most popular methods
+
+1. Adjacency Matrix
+
+    -> In this representation, we create a matrix of size v x v, for a graph with v vertices
+    -> It is filled with values 0 and 1
+    -> at matrix[i][j], the value will be 1 if there is an edge from vertex i to vertex j
+    -> Graph with same values can be different for directed and undirected graph
+    -> Adjacency matrix is ALWAYS SYMETRIC FOR UNDIRECTED GRAPH
+    
+    Applications of Adjacency Matrix
+    -> One simple application could be for cities road tracks
+        -> We can create a graph of which all cities are connected via direct roads (highways, expressways etc.)
+        -> We can translate that to a adjacency matrix and we can always easily track which city is connected to city 'A'
+    -> Similar relationship can be found out in a social media, which guy has what friends and all that
+
+    Programming queries that can be performed in adjacency matrix
+
+    -> Check if 'u' and 'v' are adjacent - Simply go to matrix[u][v] and check the value (1 is yes, 0 is no)
+    -> Find all vertices adjacent to 'u' - traverse matrix[u][0->end], and check which all values of row 'u' are 1
+    -> Find degree of 'u' - Same as Above
+    -> Adding and removing a edge - Say you want to remove an edge from vertex 'i' to vertex 'j', go to matrix[i][j], and set it to 0. Set value to 1 in case of adding a edge
+    -> Adding and removing a vertex - We already talked about the fact that size of a matrix is of v X v.
+        -> So, if we want to add a matrix, we have to create a new matrix of size v + 1, copy existing values and allocate new values for this new matrix
+        -> Removal will also be the same case.
+        -> To avoid this, we can pre-allocate some space while forming the matrix, but if not, this is the only way. O(v^2) operation it is.
+
+    Problems with adjacency Matrix
+        
+        -> It sometimes store redundant information
+            -> Example, it stores which vertices are connected, but it also stores which vertices are not connected, and sometimes we might not need that
+            -> This kinda wastes space
+
+
+2. Adjacency List
+
+    -> It solves the redundancy problem of adjacency matrix, and also makes the common query of adjacent vertices a lot faster.
+    -> We basically store the vertices which are adjacent to a vertex.
+    -> So, the for numbered graph, we store index as the vertex name and in that index we store a list (vector or linked list), which stores adjacent vertices.
+
+    Programming queries that can be performed in adjacency list
+
+        -> Size of this entire data structure - O(V+E) for directed graph, O(V+2E) for undirected graph (because in undirected graph, every edge makes 2 vertices)
+
+        -> Check if there is edge from 'u' to 'v' -> Go to vertex 'u', traverse till u find 'v'. O(v) operation. We can use 'set' DS to optimize search time
+        -> Find all adjacent of 'u' - go to 'u', find the number of items in the list. (degree of u).
+        -> Find degree of 'u' - 
+        -> Adding an edge - Edge means a connection from one vertex to another. That means adding an element in list (vector). That is O(1).
+        -> Removing an edge - We need to resize the vector. That operation is O(v) 
+
