@@ -20,6 +20,7 @@ class Employee
 
         // A constructor is a special kind of method which is invoked each time an object of class is created with those certain parameters.
         // If a constructor is not defined in a class, a default constructor is called and inits with garbage values until we re-assign those values
+        // A constructor follows 3 rules - 1. No return type    2. Same name as class   3. Access Modifier = Public
         Employee(std::string e_name, std::string company, int age)
         {   
             /*
