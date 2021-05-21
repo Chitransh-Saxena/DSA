@@ -152,7 +152,8 @@ int main ()
     // Why do even wanna do this? - Because Developer IS an employee after all. But how does it help is in code, let's see ...
 
     // When we make the function 'virtual' on which we wanna achieve polymorphism, then the function of derived class can be called from Parent class object
-    Employee *e1 = &dev;
+    // Also, only pointer or reference of base class type can be used for virtual function
+    Employee *e1 = &dev;        // This can be read as Pointer of type Employee is pointing to Deveoper object, even if it is of Employee type
     e1->Work();
 
     Employee *e2 = &t;
