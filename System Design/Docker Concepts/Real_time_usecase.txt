@@ -1,0 +1,15 @@
+How is an application created as a docker container service?
+
+-> Have the application ready as a .jar file
+-> In the same package, we are gonna create a `dockerfile`.
+-> In this dockerfile, we are gonna put the instructions we want to execute when a new container for this application is created
+-> These instructions include, pip-install <some_utility>, copy .jar file, execute some command ...etc
+-> So, we are gonna have a python or some bash script, which will keep on executing this .jar file again and again at some interval (every 5 seconds or so)
+-> This is for .jar files
+-> This is how we make sure that docker container is always up and running, because if the application or anything or any process ends in docker container, the container exits
+
+-> In case of .war files, we do not need a service, we can just do 'java -jar app_name.war`.
+
+In Enterprise, we also use docker-compose to build, bring up, put down, run multiple containers at once.
+
+

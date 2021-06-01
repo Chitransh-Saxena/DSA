@@ -1,0 +1,47 @@
+Noobish Approach - DNS Server
+-> If we have no idea how busy is a server, how can we balance load across servers?
+-> Once we send a request, it is sent to DNS server.
+-> This DNS server returns the IP address to servers (1,2,3 ...) mostly in round-robin fashion
+-> We can instead choose to have in a first server 1, then server 2 fashion ...whatever way we want.
+-> But, in software, because of unpredicatability of load, DNS server is not a good option, because one server might be getting a lot of load and another won't.
+-> We can do caching of traffic to maintain the balance, but still, that won't be sufficient. (Multiple reasons - 1. TTL associated with DNS, 2. Caching sends next request to another server, but for a differentt user, for same user, the request will go to same server thus bulking up the load)
+
+NAS vs SAN - 
+RAID - Redundant Array of Independent Disks
+	-> Raid assumes we have multiple hard drives in our system (thats what it wants)
+	-> RAID 0 - Has 2 hard drives - And strips the data, half here and half there.
+		-> Advantage - Write speed is doubled
+		-> Disadvantage - Chances of losing  data
+	-> RAID 1 - Writes data in 2 places
+		-> Advantage - If one dies, we still have a backup
+		-> Disadvantage - Write overhead
+	-> RAID 10 - Combination of above 2. (Striping and mirroring)
+		-> Disadvantage - Money
+	
+	-> RAID 5 - We could have 5 drives, we use 1 for redundancy. (How do we store all the data of other 4 disks)
+	-> RAID 6 - Handles disk failure even better in terms of hardware
+	
+Load Balancer - 
+
+	->  Load balancing has to be chosen very carefully on the basis of several factors.
+		-> cookies, session state, maybe a little bit of caching
+		-> With PHP websites, we have something called session global which stores the session information on a file in the OS.
+		-> So, in case of round-robin load balancing, or any other way which might be re-directing us to a different server, we will be losing our session info (credentials, vital things we stored like shopping cart and stuff)
+			-> So, this means each time we open a new tab (new session bean), we could be losing our cart stuff
+			-> We can handle this by having shared-storage among several servers. (Not sure how does that work)
+				-> For even better resiliency, we could add RAID to our storage methodology.
+	-> For the thigs we talked about just now, if we did Horizontal Scaling (each server for different services, media, storage, website)
+		-> Session info being lost will not happen, but, in this case a lot of load would be put on one server
+		-> In case server dies, we would lose all our data.
+			-> Again, in this case RAID comes
+		
+	-> If because of power outage, shared storage will be dead, then what?
+		-> We can create replication on our level as well.
+	
+	-> So, finally how do we design our load-balances?
+		-> Take in consideration all the factors of your organization.
+	
+	-> Cookies could also play a role in load balancing descision making
+		-> Cookies typically store some level of metadata, like username, basic info of web surfing
+		-> We could store the last visited server in the cookies, and basically check if it is possible to re-route the user to that server
+		-> This check could slow things down a bit, but in retrospect, save a lot of other decision makings

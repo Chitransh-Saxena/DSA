@@ -1,0 +1,18 @@
+Vertical Scaling - 
+	-> If we are hosting a website that is serving a lot of media and stuff, and suddenly we have a lot of users, easy solution to this problem is add more resources
+	-> if we are low on RAM, add RAM ...etc
+	-> At times when we need faster access to storage, we can go for SSD or SAS drive.
+	-> SSD is an electrical drive, no moving or rotational parts.
+
+Problems with this ?
+	-> A big financial constraint
+	-> Machines are not customized according to us.
+	
+	
+Horizontal Scaling - 
+
+-> Use of cheaper hardware, but a bunch of machines.
+-> If we have multiple requests coming for a service, we just balance that traffic to these multiple servers.
+-> A Load Balancer comes into picture here. (nginx, it is a DNS gateway)
+
+-> A slight modification we can make is, instead of having multiple servers which are exactly the same, we can have dedicated servers for each and everything.
