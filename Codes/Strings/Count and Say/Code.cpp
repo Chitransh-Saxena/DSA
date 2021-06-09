@@ -1,4 +1,4 @@
-Count And Say
+// Count And Say
 
 /* The question is very tricky in itself.
 	If we have a number 123, we should say it as "One 1, One 2, One 3", or if we have a number 113225, we say it as "Two 1, One 3, Two 2, One 5"
