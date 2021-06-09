@@ -44,14 +44,14 @@ std::vector<std::vector<int>> power_set;
 
 void getSet(std::vector<int> nums, int index)
 {
-    if(index == nums.size()-1)
+    if(index == 0)
     {
         power_set.push_back({});                // Insert Empty
         power_set.push_back({nums[index]});     // Insert Last element
     }
     else
     {
-        getSet(nums, index+1);
+        getSet(nums, index-1);
         int n = power_set.size();       // Since our plan is to add elements to currently formed sets, get those formed elements from here
 
         for(int i = 0; i<n; i++)
@@ -69,7 +69,7 @@ std::vector<std::vector<int>> getPowerSet(std::vector<int> nums)
     if(nums.empty())
         return {{}};
     
-    getSet(nums, 0);
+    getSet(nums, nums.size()-1);
     return power_set;
 }
 
