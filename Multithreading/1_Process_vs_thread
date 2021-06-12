@@ -1,0 +1,20 @@
+Process Vs Threads
+
+1. Multithreading - 
+    -> A thread is faster to start, it is usually slower and complicated to start a process
+        -> Why is it slower to start a process?
+        -> Because OS needs to allocate a bunch of resources to manage a process
+    -> Thread is a lightweight process
+    -> Thread takes lower overhead
+        -> OS needs to provide a lot of protection so that one process does not accidentally step onto another process
+    -> Communication :
+        -> Processes communicate via Interprocess Communication Channels like message queues, files, pipes
+        -> Threads communicate via shared memory
+    
+    -> Therefore, threads provide a better performance
+
+    Cons of Multithreading Model
+    
+    -> It is complicated to implement a thread based Model
+    -> It cannot be run on a distributed system, multiprocess model can be easily distributed
+        -> One work around could be that threads should communicate via IPC
