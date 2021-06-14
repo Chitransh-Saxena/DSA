@@ -18,3 +18,17 @@ Process Vs Threads
     -> It is complicated to implement a thread based Model
     -> It cannot be run on a distributed system, multiprocess model can be easily distributed
         -> One work around could be that threads should communicate via IPC
+
+    -> Another important point about shared resources with Threads
+        -> If two threads are sharing a resource, then the main thread should live at least as long as the other thread is accessing that resource
+        -> Example: If main thread is managing a resource of stdout, and a child thread is working separately, if the main thread finishes first, then the child thread will not be able to access stdout
+
+
+    Hardware Concurrency
+    -> For a problem, we can run as many threads as can to solve that problem
+    -> But there can be a time that our hardware does not support more than a certain number of threads
+    -> Now, that can degrade performance, if start more than that number
+    -> This degradation phenomenon is called "Oversubscription"
+
+    -> std provides a function to know the limit
+    -> std::thread::hardware_concurrency();         // This will give a guide on splitting tasks
