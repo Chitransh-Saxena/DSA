@@ -8,6 +8,13 @@
     -> new keyword also calls the constructor of that certain class for which the object is being created
 
 
+
+    Similarly, delete and free are there
+
+    -> all the memory allocated on heap can be freed via free(), but this does not call destructor
+    -> It can be done via delete as well, which also calls the destructor too
+
+
 */
 
 class Entity
