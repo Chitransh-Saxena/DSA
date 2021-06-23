@@ -29,16 +29,7 @@ void swap(int *xp, int *yp)
     *yp = temp;
 }
 
-
- // } Driver Code Ends
-
-
-
-
-
-
-
- // ############################### MY CODE ##################################################
+// ############################### MY CODE ##################################################
 class Solution
 {
     public:
@@ -64,13 +55,7 @@ class Solution
     }
 };
 
-// { Driver Code Starts.
 // ###################################### MY CODE ENDS #############
-
-
-
-
-
 
 /* Function to print an array */
 void printArray(int arr[], int size)
