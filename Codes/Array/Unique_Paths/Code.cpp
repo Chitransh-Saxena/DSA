@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 /*
         This is a helper function which is gonna make the recursive calls
         Complexity analysis
