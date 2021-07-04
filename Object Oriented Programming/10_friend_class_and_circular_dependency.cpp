@@ -40,6 +40,9 @@ class Complex
 {
     friend int Calculate::getSum(Complex &c1, Complex &c2);
 
+    // If I want to add the entire class (all the member functions to be as friends)
+    friend class Calculator;
+
     // a + ib;
 private:
     int real;
