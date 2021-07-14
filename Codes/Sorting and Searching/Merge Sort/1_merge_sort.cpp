@@ -22,7 +22,6 @@
 // We are passing 3 indices here, because, we wanna merge the array based on [left, mid], and [mid+1, right]
 void merge(int arr[], int left, int mid, int right)
 {
-
     int i = left;
     int j = mid+1;
 

@@ -7,9 +7,7 @@ bool isArraySorted(std::vector<int> v, int index)
         return true ? v[1] > v[0]: false;
 
 
-    return (v[index] > v[index-1] && 
-    
-    (v, index-1));
+    return (v[index] > v[index-1] && (v, index-1));
 }
 
 int main()

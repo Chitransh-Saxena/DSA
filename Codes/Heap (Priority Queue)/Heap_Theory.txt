@@ -29,7 +29,7 @@ In Binary Heap -
 
 What is advatage of having a complete binary tree?
 
--> When you sdtore a binary tree as an array, and if it is an complete binary tree, we can represent it as an array without wasting any space.
+-> When you store a binary tree as an array, and if it is an complete binary tree, we can represent it as an array without wasting any space.
 -> If it were a complete binary tree and we converted it into an array, we can also perform many operations on it very quickly.
 -> It is cache friendly too.
 
