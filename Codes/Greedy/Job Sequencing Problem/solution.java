@@ -8,6 +8,17 @@ class Solution
         Do not confuse this with only 1 job at 2 .... it is deadline, and not a set time to perform a job
     
     */
+
+    /*
+        Original approach was to sort on the basis of profit and perform higher profit job at a given deadline
+        -> This was wrong because many jobs could be performed for a given deadline (was not considering the fact that a job can be performed before a deadline)
+
+        -> New approach
+            -> Sort on the basis of profit
+            -> Find a slot to perform the job (as close to deadline as possible)
+
+            -> Now move on to next job and check if it can be performed (free slot availabel between 1 - Given deadline)
+    */
     
     class SortByJobEnd implements Comparator<Job> {
         
